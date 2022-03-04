@@ -1,0 +1,21 @@
+ if [ -z ${1+x} ]
+ then
+	echo Please enter a cpu configuration!
+	echo 
+	echo "Valid configurations are performance|ondemand|powersave"
+	echo 
+elif [ $1 = performance ]
+then
+	echo Please input password to change CPU configuration
+	performance
+elif [ $1 = ondemand ]
+then
+	echo Please input password to change CPU configuration
+	ondemand
+elif [ $1 = powersave ]
+then
+	echo Please input password to change CPU configuration
+	powersave
+else
+	sudo cpufreq-set -r -g $1
+fi

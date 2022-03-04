@@ -1,0 +1,92 @@
+
+OPTIONS=""
+
+if [ -z ${2+x} ]
+then
+	export OPTIONS="$OPTIONS --noroot --caps.drop=all --nonewprivs --blacklist=/bin/su --blacklist=/usr/bin/sudo"
+elif [[ $2 == "-"*"r"* ]]
+then
+	export OPTIONS="$OPTIONS --caps.drop=fowner,mac_override,sys_admin,sys_boot,sys_module,sys_time,wake_alarm,block_suspend,syslog,block_suspend,sys_chroot,audit_control,dac_override,sys_rawio"
+else
+	export OPTIONS="$OPTIONS --noroot --caps.drop=all --nonewprivs --blacklist=/bin/su --blacklist=/usr/bin/sudo"
+fi
+
+if [ -z ${2+x} ]
+then
+	export OPTIONS="$OPTIONS --net=tornet --dns=1.1.1.1,1.0.0.1"
+elif [[ $2 == "-"*"t"* ]]
+then
+	export OPTIONS="$OPTIONS --dns=1.1.1.1,1.0.0.1"
+elif [[ $2 == "-"*"n"* ]]
+then
+	export OPTIONS="$OPTIONS --net=none"
+else
+	export OPTIONS="$OPTIONS --net=tornet --dns=1.1.1.1,1.0.0.1"
+fi
+
+if [ -z ${2+x} ]
+then
+	export OPTIONS="$OPTIONS --blacklist=/usr/bin/*ssh* --blacklist=/usr/bin/*ftp*"
+elif [[ $2 == "-"*"s"* ]]
+then
+	export OPTIONS=$OPTIONS
+else
+	export OPTIONS="$OPTIONS --blacklist=/usr/bin/*ssh* --blacklist=/usr/bin/*ftp*"
+fi
+
+if [ -z ${2+x} ]
+then
+	export OPTIONS=$OPTIONS
+elif [[ $2 == "-"*"p"* ]]
+then
+	export OPTIONS="$OPTIONS --private"
+else
+	export OPTIONS=$OPTIONS
+fi
+
+if [ -z ${2+x} ]
+then
+	export OPTIONS=$OPTIONS
+elif [[ $2 == "-"*"o"* ]]
+then
+	export OPTIONS="$OPTIONS --read-only=/home --read-only=~ --read-only=/root"
+else
+	export OPTIONS=$OPTIONS
+fi
+
+if [ -z ${2+x} ]
+then
+	export OPTIONS=$OPTIONS
+elif [[ $2 == "-"*"z"* ]]
+then
+	export OPTIONS=$OPTIONS
+else
+	export OPTIONS="$OPTIONS --read-only=/"
+fi
+
+if [ -z ${2+x} ]
+then
+	export OPTIONS="$OPTIONS --private-dev"
+elif [[ $2 == "-"*"v"* ]]
+then
+	export OPTIONS=$OPTIONS
+else
+	export OPTIONS="$OPTIONS --private-dev"
+fi
+
+if [ -z ${2+x} ]
+then
+	export OPTIONS="$OPTIONS"
+elif [[ $2 == "-"*"x"* ]]
+then
+	export OPTIONS="$OPTIONS --x11=xpra"
+elif [[ $2 == "-"*"q"* ]]
+then
+	export OPTIONS="$OPTIONS --x11=xephyr --xephyr-screen=1000x700"
+else
+	export OPTIONS="$OPTIONS"
+fi
+
+# echo $OPTIONS
+firejail $OPTIONS --disable-mnt --blacklist=~/core --read-only=/bin --read-only=/sbin --read-only=/usr/local/bin --read-only=/usr/bin --read-only=/usr/sbin --read-only=/usr/local/sbin --noprofile --blacklist=/boot --read-only=~/.config --read-only=~/Video --read-only=~/Pictures --read-only=~/.bash_history --read-only=~/Music --read-only=~/Scripts --read-only=~/AppImages --blacklist=~/.ssh/*id_rsa* --blacklist=~/Remote --blacklist=/root/.ssh --read-only=/etc --read-only=/var --blacklist=/dev/sd* --blacklist=/dev/mapper --blacklist=/usr/bin/apt --blacklist=/usr/bin/dpkg --blacklist=/bin/system* --blacklist=/sbin/modprobe --blacklist=/usr/local/bin/* --blacklist=/usr/local/sbin/* --blacklist=~/SCP/* --blacklist=~/Scripts/* --blacklist=/usr/bin/rclone --read-only=~/.config --read-only=~/.local -c vglrun $1
+#

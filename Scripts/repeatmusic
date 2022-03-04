@@ -1,0 +1,27 @@
+
+ if [ $2 = '-v' ]
+then
+	$HOME/Scripts/play ~/Videos/$1
+	repeatmusic $1 $2
+elif [ $2 = '-u' ]
+then
+	$HOME/Scripts/play ~/Unverified/$1
+	repeatmusic $1 $2
+elif [ $2 = '-p' ] 
+then
+	$HOME/Scripts/play ~/Music/piano/$1
+	repeatmusic $1 $2
+elif [ $2 = '-m' ]
+then
+	$HOME/Scripts/play ~/Music/$1
+	repeatmusic $1 $2
+elif [ $2 = '-h' ]
+then
+	7help repeatmusic
+else
+	$HOME/Scripts/play ~/Music/$1
+	repeatmusic $1 &
+fi
+#       $HOME/Scripts/play ~/Music/$1
+# $HOME/Scripts/play ~/Music/$1 ~/Music/$2 ~/Music/$3 ~/Music/$4
+# repeatmusic $1 $2 $3 $4

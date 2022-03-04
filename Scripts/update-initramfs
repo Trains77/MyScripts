@@ -1,0 +1,2 @@
+sudo mkinitcpio -p linux517
+sudo update-grub

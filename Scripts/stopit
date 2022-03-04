@@ -1,0 +1,10 @@
+killall play
+sleep .05
+killall play
+sleep .05
+killall play
+sleep .05
+killall play
+sleep .05
+killall play
+./stopit

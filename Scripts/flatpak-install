@@ -1,0 +1,2 @@
+for i in *.flatpakref; do flatpak -y install "$i"; done
+

@@ -1,0 +1,15 @@
+disable_leds() {
+sudo su -c 'setleds -L -caps -num -scroll < /dev/console'
+done=true
+}
+done=false
+sudo su -c 'setleds -L +caps +num +scroll < /dev/console'
+sleep .3
+sudo su -c 'setleds -L -caps -num -scroll < /dev/console'
+sleep .3
+trap 'disable_leds' INT TERM EXIT KILL ABRT
+
+if [ $done = false ]
+then
+	blinkleds
+fi

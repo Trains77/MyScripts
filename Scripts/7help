@@ -1,0 +1,327 @@
+if [ -z ${1+x} ]
+then
+	echo No command specified!
+elif [ $1 = ssh-chat ]
+then
+	echo
+	echo ssh-chat - Connect to Rasbian pi SSH Chat server
+	echo
+	echo Syntax: ssh-chat
+	echo
+elif [ $1 = SavePackages ]
+then
+	echo
+	echo SavePackages - Saves a set of lists of installed Flatpaks, AUR and Pacman packages
+	echo
+	echo Syntax: SavePackages
+	echo
+elif [ $1 = system-update ]
+then
+	echo
+	echo system-update - Updates all installed system packages to the latest version
+	echo
+	echo Syntax: system-update
+	echo
+elif [ $1 = repeatmusic ]
+then 
+	echo
+	echo repeatmusic - Repeats selected music file on repeat
+	echo Defaults to playing music in ~/Music folder
+	echo
+	echo Synatax: repeatmusic [MusicFile] [-Option]
+	echo
+	echo -v Play file in the ~/Videos folder
+	echo
+	echo -u Play file in the ~/Unverified folder
+	echo
+	echo -p Play file in the ~/Music/piano folder
+	echo
+	echo -m Play file in the ~/Music folder
+	echo
+	echo -h Show this help
+	echo
+elif [ $1 = 7help ]
+then
+	echo
+	echo 7help - Display help info on a command
+	echo 
+	echo Syntax: 7help [COMMAND]
+	echo
+elif [ $1 = stfu ]
+then
+	echo
+	echo stfu - Tells you to please shut the [REDACTED] up
+	echo 
+	echo Syntax: stfu
+	echo
+elif [ $1 = t77-player ]
+then
+	echo
+	echo t77-player - Start T77 Music Player
+	echo
+	echo Syntax: t77-player
+	echo
+elif [ $1 = getfreq ]
+then
+	echo
+	echo getfreq - Get current cpu frequencies
+	echo
+	echo Syntax: getfreq
+	echo
+elif [ $1 = powersave ]
+then
+	echo
+	echo powersave - Set CPU governer to powersave
+	echo Optimize cpu usage for powersaving
+	echo May result in degraded system performance
+	echo
+	echo Syntax: powersave
+	echo
+elif [ $1 = multiconvert ]
+then
+	echo
+	echo multiconvert - Try to convert all files in current directory to mp3
+	echo
+	echo Syntax: multiconvert
+	echo
+elif [ $1 = extractor ]
+then
+	echo
+	echo extractor - Download all resources for a specific Minecraft version
+	echo 
+	echo Syntax: extractor
+	echo
+elif [ $1 = openandroid ]
+then
+	echo
+	echo openandroid - Connect to and open local WayDroid instnace
+	echo
+	echo Syntax: openandroid
+	echo
+elif [ $1 = ondemand ]
+then
+	echo
+	echo ondemand - Optimize CPU for both performance and powersaving
+	echo Recommended for usage on laptops and mobile devices
+	echo 
+	echo Syntax: ondemand
+	echo
+elif [ $1 = conservative ]
+then
+	echo
+	echo conservative - Conserve CPU usage
+	echo Gives better peformance than powersave, but more powersaving than ondemand
+	echo
+	echo Syntax: conservative
+	echo
+elif [ $1 = preservative ]
+then
+	7help conservative
+elif [ $1 = clearram ]
+then
+	echo
+	echo clearram - Clear RAM being used for cache
+	echo
+	echo Note: Does not usually do much as RAM is usually reallocated shortly
+	echo
+	echo Syntax: clearram
+	echo
+elif [ $1 = batterystat ]
+then
+	echo
+	echo batterystat - Get current battery info and status
+	echo 
+	echo Syntax: batterystat
+	echo
+elif [ $1 = enablecamera ]
+then
+	echo
+	echo enablecamera - Enable usage of the internal camera
+	echo Setting does not persist across restarts
+	echo
+	echo Syntax: enablecamera
+	echo
+elif [ $1 = enableturbo ]
+then
+	echo
+	echo enableturbo - Allow the cpu to use turbo boosting
+	echo
+	echo Syntax: enableturbo
+	echo
+elif [ $1 = disableturbo ]
+then
+	echo
+	echo disableturbo - Disallow the cpu to use turbo boosting
+	echo
+	echo Syntax: disableturbo
+	echo
+elif [ $1 = disablecamera ]
+then
+	echo
+	echo "disablecamera - Disable usage of the internal camera (Default)" 
+	echo Setting does not persist across restarts
+	echo
+	echo Syntax: disablecamera
+	echo
+elif [ $1 = tuxsay ]
+then
+	echo
+	echo tuxsay - Have tux say a random fortune
+	echo
+	echo Syntax: tuxsay
+	echo
+elif [ $1 = windowscreen ] 
+then
+	echo 
+	echo windowscreen - Set environment to use display and audio server on ip 10.0.0.3
+	echo
+	echo Syntax: . windowscreen
+	echo
+elif [ $1 = performance ]
+then
+	echo 
+	echo performance - Optimize CPU for performance
+	echo May cause device battery to drain faster
+	echo
+	echo Syntax: performance
+	echo
+elif [ $1 = clearhistory ]
+then
+	echo
+	echo clearhistory - Clear thumbnail cache and local bash history
+	echo 
+	echo Syntax: clearhistory
+	echo
+elif [ $1 = BuildTools ]
+then
+	echo 
+	echo BuildTools - Download and compile specified SpigotMC version
+	echo
+	echo Syntax: BuildTools [MCVERSION]
+	echo
+elif [ $1 = BuildToolsBukkit ]
+then
+	echo 
+	echo BuildToolsBukkit - Download and compile specified CraftBukkit version
+	echo
+	echo Syntax: BuildToolsBukkit [MCVERSION]
+	echo
+elif [ $1 = sshuttle ]
+then
+	echo
+	echo "sshuttle - Proxy system's connection through a SSH server"
+	echo
+	echo Syntax - sshuttle -v -r [USER]@[IP] 0/0 [OPTIONS]
+	echo
+	echo "For more info, run sshuttle --help"
+	echo
+elif [ $1 = RcloneMount ]
+then
+	echo
+	echo RcloneMount - Mount all registered Rclone filesystems in /media/trains77/VirtualDrives
+	echo
+	echo Syntax: RcloneMount
+	echo
+elif [ $1 = mountencrypted ]
+then
+	echo 
+	echo mountencrypted - Mount all registered encrypted filesystems
+	echo
+	echo Syntax: mountencrypted
+	echo
+elif [ $1 = mountminecraft ]
+then 
+	echo
+	echo mountminecraft - Mount remote Minecraft server folder in ~/Remote
+	echo "Unmount with 'fusermount -u ~/Remote'"
+	echo
+	echo Syntax: mountminecraft
+	echo
+elif [ $1 = chromeos-apk ]
+then
+	echo 
+	echo chromeos-apk - Convert apk to Chrome extension
+	echo 
+	echo Syntax: chromeos-apk [PATH_TO_APK]
+	echo
+elif [ $1 = GetMinecraftServer ]
+then
+	echo
+	echo GetMinecraftServer - Download specified version of specified Minecraft server
+	echo
+	echo Syntax: GetMinecraftServer [VERSION] [SERVER]
+	echo
+	echo Available Servers: Purpur, Spigot/SpigotMC, Paper/PaperMC, PyMine, bdsx, CraftBukkit
+	echo Note: bdsx, and PyMine do not support custom server versions
+	echo
+elif [ $1 = fortune ]
+then
+	echo
+	echo fortune - It tells you your fortune...
+	echo
+	echo Syntax: fortune
+	echo
+elif [ $1 = setfreq ]
+then
+	echo
+	echo setfreq - Set CPU frequency governer
+	echo
+	echo Syntax: setfreq [MODE]
+	echo
+	echo Available Modes: performance, ondemand, powersave
+	echo
+elif [ $1 = browsh ]
+then
+	echo
+	echo browsh - A terminal based web browser
+	echo
+	echo "Syntax: browsh (--startup-url) [URL]"
+	echo
+	echo Default webpage is "https://www.brow.sh"
+	echo
+elif [ $1 = help ]
+then
+	echo
+	echo help - Displays help info on a command
+	echo
+	echo Syntax: help [COMMAND]
+	echo 
+elif [ $1 = playstream ] 
+then
+	echo
+	echo playstream - Play a random music file from your Music directory
+	echo
+	echo Syntax: playstream
+	echo
+elif [ $1 = jailprogram ]
+then
+	echo
+	echo jailprogram - Sandbox the specified program
+	echo
+	echo Syntax: jailprogram [PROGRAM] [OPTIONS]
+	echo
+	echo Options:
+	echo
+	echo "-r - Allow restricted root access, otherwise root is disabled"
+	echo "-t - Use default Wireless device, otherwise uses tornet"
+	echo "-n - Disable any network access"
+	echo "-s - Enable ssh commands"
+	echo "-p - Use temporary home directory"
+	echo "-o - Make home directory read only"
+	echo "-z - Make rootfs read-write"
+	echo "-v - Dont use private /dev folder"
+	echo "-x - Sandbox X11 via Xpra"
+	echo "-q - Sandbox X11 via Xephyr"
+	echo
+elif [ $1 = blinkleds ]
+then
+	echo
+	echo blinkleds - Blink the caps, num, and scroll lock LEDs
+	echo
+	echo Syntax: blinkleds
+	echo
+else
+	echo No manual entry found, using Man Pages...
+	echo
+	man $1
+fi

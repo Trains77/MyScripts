@@ -1,0 +1,4 @@
+clear
+cat /proc/cpuinfo | grep MHz
+sleep .4
+getfreq &

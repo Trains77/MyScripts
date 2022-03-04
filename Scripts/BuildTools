@@ -1,0 +1,24 @@
+#!/bin/bash
+if [ -z ${1+x} ]
+then
+echo Please enter a version!
+else
+echo "You have selected SpigotMC" $1
+echo
+mkdir $HOME/.cache/buildtools-$1
+cd $HOME/.cache/buildtools-$1
+curl https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar > $HOME/.cache/buildtools-$1/BuildTools.jar
+java -jar $HOME/.cache/buildtools-$1/BuildTools.jar --rev $1
+if [ -d $HOME/Downloads ]
+then
+	cp -u $HOME/.cache/buildtools-$1/spigot-$1.jar $HOME/Downloads/spigot-$1.jar
+else
+	mkdir $HOME/Downloads
+	cp -u $HOME/.cache/buildtools-$1/spigot-$1.jar $HOME/Downloads/spigot-$1.jar
+fi
+echo
+echo "Saved server jarfile to Downloads"
+rm -rf $HOME/.cache/buildtools-$1
+echo
+echo "Removed BuildTools cache"
+fi

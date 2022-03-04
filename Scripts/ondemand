@@ -1,0 +1,9 @@
+# sudo cpufreq-set -g schedutil -c 0
+# sudo cpufreq-set -g schedutil -c 1
+#sudo cpufreq-set -f 1.15G -c 0
+#sudo cpufreq-set -f 1.15G -c 1
+# sudo cpufreq-set -g ondemand -c 0
+# sudo cpufreq-set -g ondemand -c 1
+echo schedutil | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+# echo N | sudo tee /sys/module/workqueue/parameters/power_efficient
+echo 'CPU will use as much power as it needs'

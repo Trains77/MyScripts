@@ -1,0 +1,24 @@
+#!/bin/bash
+if [ -z ${1+x} ]
+then
+echo Please specify a version!
+else
+echo "You have selected CraftBukkit" $1
+echo
+mkdir $HOME/.cache/buildtools-bukkit-$1
+cd $HOME/.cache/buildtools-bukkit-$1
+curl https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar > $HOME/.cache/buildtools-bukkit-$1/BuildTools.jar
+java -jar $HOME/.cache/buildtools-bukkit-$1/BuildTools.jar --rev $1 --compile craftbukkit
+if [ -d $PATH/Downloads ]
+then
+	cp -u $HOME/.cache/buildtools-bukkit-$1/craftbukkit-$1.jar $HOME/Downloads/craftbukkit-$1.jar
+else
+	mkdir $HOME/Downloads
+	cp -u $HOME/.cache/buildtools-bukkit-$1/craftbukkit-$1.jar $HOME/Downloads/craftbukkit-$1.jar
+fi
+echo
+echo "Saved server jarfile to Downloads"
+rm -rf $HOME/.cache/buildtools-bukkit-$1
+echo
+echo "Removed BuildTools cache"
+fi

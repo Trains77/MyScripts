@@ -1,0 +1,11 @@
+echo Updating Flatpaks...
+echo
+sudo flatpak update
+echo
+echo Updating AUR Packages
+echo
+sudo pacman -Syu
+echo
+echo Finishing...
+echo
+SavePackages

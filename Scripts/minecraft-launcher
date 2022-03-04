@@ -1,0 +1,2 @@
+# export mesa_glthread=true
+mesa_glthread=true /usr/bin/minecraft-launcher

@@ -1,0 +1,9 @@
+if [ -z $1 ]
+then
+adb shell input keyevent 26
+fi
+gpg $HOME/Scripts/.phonepasswd.gpg 2> /dev/null
+export PHONEPASSWORD=$(cat $HOME/Scripts/.phonepasswd);
+rm $HOME/Scripts/.phonepasswd
+adb shell input keyevent 82
+adb shell input text $PHONEPASSWORD && adb shell input keyevent 66

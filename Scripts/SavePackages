@@ -1,0 +1,4 @@
+export SAVE_LOCATION=/media/trains77/Backups/Packages
+pacman -Qe > $SAVE_LOCATION/pkglist.txt
+pacman -Qem > $SAVE_LOCATION/aur.txt
+flatpak list > $SAVE_LOCATION/flatpak.txt

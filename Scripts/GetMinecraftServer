@@ -1,0 +1,86 @@
+#!/bin/bash
+
+# A simple script I made to get various minecraft server types.
+# export LatestVersion=1.18
+# export LatestStable=1.17.1
+LatestStable=$1
+ServerRequested=$2
+if [ -z ${1+x} ]
+then
+echo Please input game version
+read LatestStable
+echo
+fi
+
+if [ -z ${1+x} ]
+then
+echo Please input the server you want to download below
+read ServerRequested
+elif [ $1 == '-h' ]
+then
+7help GetMinecraftServer
+elif [ $1 == '--help' ]
+then
+7help GetMinecraftServer
+else
+	if [ -z $ServerRequested ]
+	then
+		echo Please input the server you want to download below
+		read ServerRequested
+	fi
+fi
+if [ -z $ServerRequested ]
+then
+	echo Please enter a server!
+	GetMinecraftServer $LatestStable
+	echo
+elif [ $ServerRequested = Purpur ]
+then
+	echo Downloading Latest Purpur...
+	curl https://api.pl3x.net/v2/purpur/$LatestStable/latest/download > $HOME/Downloads/Purpur-$LatestStable.jar
+
+
+elif [ $ServerRequested = Spigot ]
+then
+	BuildTools $LatestStable
+elif [ $ServerRequested = SpigotMC ]
+then
+	BuildTools $LatestStable	
+
+
+elif [ $ServerRequested = Paper ]
+then 
+	echo Downloading latest PaperMC version..
+	curl https://papermc.io/ci/job/Paper-$LatestStable/lastStableBuild/artifact/paperclip.jar > $HOME/Downloads/PaperMC-$LatestStable.jar
+elif [ $ServerRequested = PaperMC ]
+then
+	echo Downloading latest PaperMC version...
+	curl https://papermc.io/ci/job/Paper-$LatestStable/lastStableBuild/artifact/paperclip.jar > $HOME/Downloads/PaperMC-$LatestStable.jar
+
+elif [ $ServerRequested = PyMine ]
+then 
+	echo Downloading latest PyMine version
+	curl https://codeload.github.com/py-mine/PyMine/zip/refs/heads/main > $HOME/Downloads/PyMine.zip
+elif [ $ServerRequested = BDSX ]
+then
+	echo Downloading latest BDSX server...
+	cd $HOME/Downloads
+	git clone https://github.com/bdsx/bdsx
+elif [ $ServerRequested = bdsx ]
+then
+	echo Downloading latest BDSX server
+	cd $HOME/Downloads
+	git clone https://github.com/bdsx/bdsx
+elif [ $ServerRequested = craftbukkit ]
+then
+	echo Downloading latest CraftBukkit server...
+	BuildToolsBukkit $LatestStable
+elif [ $ServerRequested = CraftBukkit ]
+then
+	echo Downloading latest CraftBukkit Server...
+	BuildToolsBukkit $LatestStable
+else
+	echo "Unknown or unsupported server type:" $ServerRequested
+	echo
+	GetMinecraftServer $1
+fi

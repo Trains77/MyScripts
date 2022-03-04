@@ -1,0 +1,4 @@
+# export PULSE_SERVER=/run/user/1000/pulse/native
+export RandomMusic=$(find ~/Music -type f | shuf -n 1)
+play $RandomMusic
+playstream
