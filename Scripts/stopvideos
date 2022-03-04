@@ -1,5 +1,0 @@
-kill $(fuser /home/trains77/Scripts/random.sh)
-sleep .01
-kill $(fuser /home/trains77/Scripts/random.sh)
-killall play
-killall mplayer

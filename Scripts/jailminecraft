@@ -1,9 +1,0 @@
-sshfs -p 77 trains77@127.0.0.1:/home/trains77/.minecraft ~/.firejail/minecraft/.minecraft 
-sshfs -p 77 trains77@127.0.0.1:/home/trains77/.local/share/multimc ~/.firejail/minecraft/.local/share/multimc
-sshfs -p 77 trains77@127.0.0.1:/home/trains77/Downloads ~/.firejail/minecraft/Downloads
-sshfs -p 77 trains77@127.0.0.1:/home/trains77/Pictures/minecraft ~/.firejail/minecraft/Pictures/minecraft
-firejail --machine-id --nodvd --nonewprivs --noexec=~/Scripts --noexec=/home/trains77/SCP --noprinters --noprofile --noroot --nou2f --private=/home/trains77/.firejail/minecraft --read-only=/usr/ --read-only=/home/trains77/wii --private-dev --private-tmp --blacklist=/home/trains77/Music --blacklist=/home/trains77/.private --blacklist=/home/trains77/Remote --blacklist=/var/run/media multimc
-fusermount -u ~/.firejail/minecraft/.multimc
-fusermount -u ~/.firejail/minecraft/.minecraft
-fusermount -u ~/.firejail/minecraft/Downloads
-fusermount -u ~/.firejail/minecraft/Pictures/minecraft

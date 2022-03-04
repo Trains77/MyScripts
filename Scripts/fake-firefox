@@ -1,3 +1,0 @@
-sshfs trains77@127.0.0.1:/home/trains77/Downloads ~/.firejail/firefox/Downloads -p 77
-firejail --blacklist=/media/trains77 --blacklist=~/Remote --blacklist=~/Scripts --blacklist=~/SCP --blacklist=~/.local/share/applications --blacklist=~/.minecraft --blacklist=~/.local/share/multimc --dns=127.0.0.1 --name=Firefox --nodvd --noroot --noprofile --nou2f --private=~/.firejail/firefox --private-cache --private-dev --blacklist=/var/run/media/trains77 --read-only=/boot firefox --new-instance
-fusermount -u ~/.firejail/firefox/Downloads
