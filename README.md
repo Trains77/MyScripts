@@ -13,10 +13,6 @@ batterystat - Gets current battery status
 
 blinkleds - Makes keyboard capslock, numlock and scrollock blink
 
-clearhistory - Clears all bash history
-
-clearram - Clears RAM cache
-
 conservative, ondemand, performance, powersave setfreq - Sets CPU governer
 
 enablecamera, disablecamera - Enables or disables camera
@@ -35,16 +31,8 @@ playstream - Plays random songs in ~/Music folder
 
 SavePackages - Saves a list of currently install packages to ~/Downloads
 
-sudo-ok - Does nothing
-
 system-update - Updates Pacman and Flatpak packages
 
-train - Runs sl command repeatedly
-
-tuxsay - Tux says
-
-unlockphone - Can be used to unlock a phone connected via ADB (Requires adb, and a password file encrypted by GPG)
-
-update-initramfs - Updates kernel (As Arch-Based distros do not have a easy equivelant)
+update-kernel - Updates kernel (As Arch-Based distros do not have a easy equivelant)
 
 update-winetricks - Downloads and install latest winetricks version
