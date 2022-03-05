@@ -1,5 +1,5 @@
 # MyScripts
-Contains various scripts that I have made, some have been modified or removed as some could have contain personal information
+Contains various scripts that I have made
 
 Here are some of the commands that are here:
 
