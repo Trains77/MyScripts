@@ -1,5 +1,7 @@
 # MyScripts
-Contains various scripts that I have made
+Contains various scripts that I have made,
+
+These scripts are Linux-only and are only tested to work on BASH
 
 Here are some of the commands that are here:
 
