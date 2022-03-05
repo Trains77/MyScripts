@@ -53,16 +53,28 @@ then
 	# echo Downloading latest PaperMC version..
 	# curl https://papermc.io/ci/job/Paper-$LatestStable/lastStableBuild/artifact/paperclip.jar > $HOME/Downloads/PaperMC-$LatestStable.jar
 	echo PaperMC is no longer supported by this script due to API changes
+	echo
+	echo "Unknown or unsupported server type:" $ServerRequested
+	echo
+	GetMinecraftServer $1
 elif [ $ServerRequested = PaperMC ]
 then
 	# echo Downloading latest PaperMC version...
 	# curl https://papermc.io/ci/job/Paper-$LatestStable/lastStableBuild/artifact/paperclip.jar > $HOME/Downloads/PaperMC-$LatestStable.jar
 	echo PaperMC is no longer supported by this script due to API changes
-
+	echo
+	echo "Unknown or unsupported server type:" $ServerRequested
+	echo
+	GetMinecraftServer $1
 elif [ $ServerRequested = PyMine ]
 then
-	echo Downloading latest PyMine version
-	curl https://codeload.github.com/py-mine/PyMine/zip/refs/heads/main > $HOME/Downloads/PyMine.zip
+	# echo Downloading latest PyMine version
+	# curl https://codeload.github.com/py-mine/PyMine/zip/refs/heads/main > $HOME/Downloads/PyMine.zip
+	echo PyMine is no longer supported by this script
+	echo
+	echo "Unknown or unsupported server type:" $ServerRequested
+	echo
+	GetMinecraftServer $1
 elif [ $ServerRequested = BDSX ]
 then
 	echo Downloading latest BDSX server...
