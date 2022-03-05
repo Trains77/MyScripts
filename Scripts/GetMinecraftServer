@@ -45,20 +45,22 @@ then
 	BuildTools $LatestStable
 elif [ $ServerRequested = SpigotMC ]
 then
-	BuildTools $LatestStable	
+	BuildTools $LatestStable
 
 
 elif [ $ServerRequested = Paper ]
-then 
-	echo Downloading latest PaperMC version..
-	curl https://papermc.io/ci/job/Paper-$LatestStable/lastStableBuild/artifact/paperclip.jar > $HOME/Downloads/PaperMC-$LatestStable.jar
+then
+	# echo Downloading latest PaperMC version..
+	# curl https://papermc.io/ci/job/Paper-$LatestStable/lastStableBuild/artifact/paperclip.jar > $HOME/Downloads/PaperMC-$LatestStable.jar
+	echo PaperMC is no longer supported by this script due to API changes
 elif [ $ServerRequested = PaperMC ]
 then
-	echo Downloading latest PaperMC version...
-	curl https://papermc.io/ci/job/Paper-$LatestStable/lastStableBuild/artifact/paperclip.jar > $HOME/Downloads/PaperMC-$LatestStable.jar
+	# echo Downloading latest PaperMC version...
+	# curl https://papermc.io/ci/job/Paper-$LatestStable/lastStableBuild/artifact/paperclip.jar > $HOME/Downloads/PaperMC-$LatestStable.jar
+	echo PaperMC is no longer supported by this script due to API changes
 
 elif [ $ServerRequested = PyMine ]
-then 
+then
 	echo Downloading latest PyMine version
 	curl https://codeload.github.com/py-mine/PyMine/zip/refs/heads/main > $HOME/Downloads/PyMine.zip
 elif [ $ServerRequested = BDSX ]
