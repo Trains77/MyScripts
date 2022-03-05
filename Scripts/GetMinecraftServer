@@ -18,10 +18,12 @@ echo Please input the server you want to download below
 read ServerRequested
 elif [ $1 == '-h' ]
 then
-7help GetMinecraftServer
+./7help GetMinecraftServer
+exit
 elif [ $1 == '--help' ]
 then
-7help GetMinecraftServer
+./7help GetMinecraftServer
+exit
 else
 	if [ -z $ServerRequested ]
 	then
@@ -46,12 +48,8 @@ then
 elif [ $ServerRequested = SpigotMC ]
 then
 	BuildTools $LatestStable
-
-
 elif [ $ServerRequested = Paper ]
 then
-	# echo Downloading latest PaperMC version..
-	# curl https://papermc.io/ci/job/Paper-$LatestStable/lastStableBuild/artifact/paperclip.jar > $HOME/Downloads/PaperMC-$LatestStable.jar
 	echo
 	echo PaperMC is no longer supported by this script due to API changes
 	echo
@@ -60,8 +58,6 @@ then
 	GetMinecraftServer $1
 elif [ $ServerRequested = PaperMC ]
 then
-	# echo Downloading latest PaperMC version...
-	# curl https://papermc.io/ci/job/Paper-$LatestStable/lastStableBuild/artifact/paperclip.jar > $HOME/Downloads/PaperMC-$LatestStable.jar
 	echo
 	echo PaperMC is no longer supported by this script due to API changes
 	echo
@@ -70,8 +66,6 @@ then
 	GetMinecraftServer $1
 elif [ $ServerRequested = PyMine ]
 then
-	# echo Downloading latest PyMine version
-	# curl https://codeload.github.com/py-mine/PyMine/zip/refs/heads/main > $HOME/Downloads/PyMine.zip
 	echo
 	echo PyMine is no longer supported by this script
 	echo
