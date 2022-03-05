@@ -15,7 +15,9 @@ batterystat - Gets current battery status
 
 blinkleds - Makes keyboard capslock, numlock and scrollock blink
 
-conservative, ondemand, performance, powersave setfreq - Sets CPU governer
+conservative, ondemand, performance, powersave - Sets CPU governer
+
+getfreq - Get current cpu core frequencies
 
 enablecamera, disablecamera - Enables or disables camera
 
